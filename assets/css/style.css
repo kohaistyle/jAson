@@ -1,0 +1,31 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font-family: helvetica;
+	font-size: 20px; 
+}
+
+.users h4:before{
+	content: "- ";
+}
+.users h5:before{
+	content: "> ";
+}
+
+.users h4{
+	padding-left: 15px;
+}
+
+.users h5{
+	padding-left: 30px;
+	color: #E91E63;
+}
+
+.form-group{
+	border-radius: 5px;
+	background-color: #03a9f4; 
+	padding: 40px;
+}

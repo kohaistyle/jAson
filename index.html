@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jAson</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body ng-app="jasonApp" class="container">
+	
+	<div ng-controller="jasonController">
+		<h1>My name is {{ jName }}</h1>
+		
+		<div class="row">
+		
+		<form class="form-group">
+		  	<fieldset class="col-md-6">
+		    <label for="exampleInputEmail1">Search Name :</label>
+			<input type="text" class="" ng-model="searchname"></input>
+			</fieldset>
+			<fieldset class="col-md-6">
+			<label for="exampleInputEmail1">Search Age :</label>
+			<input type="text" class="" ng-model="searchage"></input>
+			</fieldset>
+		 </form>
+
+
+		<div class="users col-md-4" ng-repeat="user in users | filter: { 'name': searchname, 'age': searchage }">
+
+			<h3 ng-bind="user.name"></h3>
+			<h4 ng-bind="user.phone"></h4>
+			<h4 ng-bind="user.age"></h4>
+			<h4 ng-bind="user.adress"></h4>
+			<h5 ng-repeat="(key, tech) in user.techs">{{ key }} : {{ tech }}</h5>
+		</div>
+		</div>
+	
+	</div>
+
+
+	<footer>	
+		<script src="node_modules/angular/angular.min.js"></script>
+		<script src="assets/js/core/app.js"></script>
+		<script src="assets/js/controller/jason-controller.js"></script>
+	</footer>
+
+</body>
+</html>
